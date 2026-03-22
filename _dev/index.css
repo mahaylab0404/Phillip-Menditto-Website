@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Montserrat", sans-serif;
+  
+  --color-navy: #0A192F;
+  --color-navy-deep: #050C1A;
+  --color-gold: #C5A028;
+  --color-gold-light: #E5C158;
+  --color-gray-legal: #4B5563;
+  --color-paper: #F8F9FA;
+
+  @keyframes slow-zoom {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1.15); }
+  }
+}
+
+@utility animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}
+
+body {
+  @apply font-sans text-base leading-relaxed text-gray-legal bg-white;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif tracking-tight text-navy;
+}
+
+.legal-border {
+  @apply border border-navy/10;
+}
+
+.legal-shadow {
+  @apply shadow-[0_4px_20px_rgba(0,0,0,0.04)];
+}
+
+.btn-primary {
+  @apply bg-navy text-white px-8 py-4 rounded-sm font-display font-semibold text-sm tracking-widest uppercase transition-all hover:bg-navy-deep hover:shadow-lg active:scale-[0.98];
+}
+
+.btn-gold {
+  @apply bg-gold text-white px-8 py-4 rounded-sm font-display font-semibold text-sm tracking-widest uppercase transition-all hover:bg-gold-light hover:shadow-lg active:scale-[0.98];
+}
+
+.section-padding {
+  @apply py-24 md:py-32;
+}
